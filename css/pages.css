@@ -1,0 +1,1013 @@
+/* ==========================================================================
+   BUMIGAS - Page-Specific Layout Styles (pages.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION (index.html)
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: var(--color-bg);
+  padding: 8rem 0 5rem 0;
+  overflow: hidden;
+}
+
+/* Background image with overlay */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(11, 60, 140, 0.9) 0%, rgba(0, 87, 184, 0.7) 100%);
+  z-index: -1;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-content h1 {
+  color: var(--color-bg);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hero-content h1 span {
+  color: var(--color-accent);
+}
+
+.hero-content .subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  max-width: 620px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Hero Stats Sidebar */
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--color-accent);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.stat-number {
+  font-size: 2.25rem;
+  font-weight: 700;
+  font-family: var(--font-headings);
+  line-height: 1.1;
+  color: var(--color-bg);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    min-height: auto;
+    padding: 10rem 0 6rem 0;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hero-content h1 {
+    font-size: 2.75rem;
+  }
+  .hero-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .stat-card {
+    flex: 1 1 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.25rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+  .hero-stats {
+    flex-direction: column;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. WHY CHOOSE BUMIGAS SECTION (index.html)
+   -------------------------------------------------------------------------- */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.why-card {
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.why-card:hover {
+  border-color: var(--color-primary);
+}
+
+.why-card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-light-blue);
+  color: var(--color-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  transition: var(--transition-normal);
+}
+
+.why-card:hover .why-card-icon {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.why-card-number {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(27, 43, 65, 0.05);
+  font-family: var(--font-headings);
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   3. ABOUT SECTION (What is CNG?)
+   -------------------------------------------------------------------------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+.about-experience-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-experience-badge h4 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .about-image img {
+    height: 360px;
+  }
+}
+
+/* About Timeline (Company Journey) */
+.timeline-section {
+  margin-top: 5rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 3.5rem auto 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: var(--color-border);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  border-radius: var(--radius-full);
+}
+
+.timeline-item {
+  padding: 1rem 3rem;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -10px;
+  background-color: var(--color-bg);
+  border: 4px solid var(--color-primary);
+  top: 25px;
+  border-radius: 50%;
+  z-index: 1;
+  transition: var(--transition-normal);
+}
+
+.timeline-item:hover::after {
+  background-color: var(--color-accent);
+  border-color: var(--color-secondary);
+}
+
+.timeline-left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-right {
+  left: 50%;
+}
+
+.timeline-right::after {
+  left: -10px;
+}
+
+.timeline-content {
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+}
+
+.timeline-year {
+  font-family: var(--font-headings);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 31px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    text-align: left;
+  }
+  .timeline-item::after {
+    left: 21px;
+    top: 25px;
+  }
+  .timeline-right {
+    left: 0%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. SOLUTIONS SECTION (index.html & solutions.html)
+   -------------------------------------------------------------------------- */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.solution-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  transition: var(--transition-normal);
+}
+
+.solution-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.solution-img-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.solution-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.solution-card:hover .solution-img-wrapper img {
+  transform: scale(1.08);
+}
+
+.solution-icon-overlay {
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-md);
+}
+
+.solution-info {
+  padding: 2.25rem 2rem 2rem 2rem;
+}
+
+.solution-info h3 {
+  margin-bottom: 0.75rem;
+}
+
+.solution-info p {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  min-height: 72px;
+}
+
+/* --------------------------------------------------------------------------
+   5. HOW CNG WORKS (Flow process / Logo philosophy)
+   -------------------------------------------------------------------------- */
+.cng-flow-container {
+  margin-top: 4rem;
+}
+
+/* Interactive horizontal flow */
+.cng-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+/* Connector line */
+.cng-steps::after {
+  content: '';
+  position: absolute;
+  top: 45px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background-color: var(--color-border);
+  z-index: 1;
+}
+
+.cng-step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cng-step-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg);
+  border: 4px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--color-secondary);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+  transition: var(--transition-normal);
+}
+
+.cng-step-card:hover .cng-step-circle {
+  border-color: var(--color-primary);
+  background-color: var(--color-light-blue);
+  color: var(--color-primary);
+  transform: scale(1.08);
+  box-shadow: var(--shadow-md);
+}
+
+/* Color indicator mapping for steps mimicking the logo swooshes */
+.cng-step-card.step-1 .cng-step-circle { border-color: var(--color-secondary); color: var(--color-secondary); }
+.cng-step-card.step-2 .cng-step-circle { border-color: var(--color-primary); color: var(--color-primary); }
+.cng-step-card.step-3 .cng-step-circle { border-color: var(--color-accent); color: var(--color-accent); }
+.cng-step-card.step-4 .cng-step-circle { border-color: #A3D55A; color: #A3D55A; }
+.cng-step-card.step-5 .cng-step-circle { border-color: var(--color-dark-text); color: var(--color-dark-text); }
+
+.cng-step-title {
+  font-family: var(--font-headings);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.cng-step-desc {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #6C829F;
+}
+
+@media (max-width: 1024px) {
+  .cng-steps {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .cng-steps::after {
+    display: none;
+  }
+  .cng-step-card {
+    flex-direction: row;
+    text-align: left;
+    gap: 1.5rem;
+  }
+  .cng-step-circle {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. INDUSTRIES SERVED (index.html & industries.html)
+   -------------------------------------------------------------------------- */
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.industry-card {
+  position: relative;
+  height: 180px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.industry-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.industry-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(11, 60, 140, 0.95) 0%, rgba(27, 43, 65, 0.4) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  z-index: 1;
+  transition: var(--transition-normal);
+}
+
+.industry-card-icon {
+  font-size: 1.75rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  transition: var(--transition-normal);
+}
+
+.industry-card h3 {
+  color: var(--color-bg);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.industry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.industry-card:hover img {
+  transform: scale(1.1);
+}
+
+.industry-card:hover .industry-card-overlay {
+  background: linear-gradient(to top, rgba(0, 87, 184, 0.98) 0%, rgba(11, 60, 140, 0.6) 100%);
+}
+
+.industry-card:hover .industry-card-icon {
+  transform: scale(1.15);
+}
+
+/* --------------------------------------------------------------------------
+   7. BENEFITS COMPARISON TABLE
+   -------------------------------------------------------------------------- */
+.comparison-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  margin-top: 3.5rem;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: var(--color-bg);
+}
+
+.comparison-table th, 
+.comparison-table td {
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.comparison-table th {
+  font-family: var(--font-headings);
+  font-weight: 600;
+  color: var(--color-secondary);
+  background-color: var(--color-light-gray);
+  font-size: 1.05rem;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Highlight CNG Column */
+.comparison-table th:nth-child(2),
+.comparison-table td:nth-child(2) {
+  background-color: rgba(122, 193, 67, 0.04);
+}
+
+.comparison-table th:nth-child(2) {
+  background-color: rgba(122, 193, 67, 0.08);
+  font-weight: 700;
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.comparison-table td:nth-child(2) {
+  font-weight: 500;
+}
+
+.badge-cng-pill {
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  margin-left: 0.5rem;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   8. SUSTAINABILITY (Infographics & Progress Circles)
+   -------------------------------------------------------------------------- */
+.sustainability-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.sustainability-progress {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.progress-circle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+}
+
+.svg-circle-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1.25rem;
+}
+
+.svg-circle-container svg {
+  transform: rotate(-90deg);
+}
+
+.circle-bg {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 8px;
+}
+
+.circle-val {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 8px;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.5s ease-in-out;
+}
+
+.svg-circle-container.circle-primary .circle-val {
+  stroke: var(--color-primary);
+}
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-headings);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+@media (max-width: 1024px) {
+  .sustainability-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sustainability-progress {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. FEATURED PROJECTS PORTFOLIO
+   -------------------------------------------------------------------------- */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  background: none;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-dark-text);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filter-tab:hover,
+.filter-tab.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2.5rem;
+}
+
+.project-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  transition: var(--transition-normal);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.project-img-wrapper {
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.project-card:hover .project-img-wrapper img {
+  transform: scale(1.08);
+}
+
+.project-card-info {
+  padding: 1.75rem;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #6C829F;
+  margin-bottom: 0.75rem;
+}
+
+.project-savings-badge {
+  background-color: rgba(50, 183, 104, 0.1);
+  color: var(--color-success);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. LATEST NEWS & BLOG CARDS
+   -------------------------------------------------------------------------- */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.news-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  transition: var(--transition-normal);
+}
+
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.news-img-wrapper {
+  height: 200px;
+  overflow: hidden;
+}
+
+.news-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 1.75rem;
+}
+
+.news-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #6C829F;
+  margin-bottom: 0.75rem;
+}
+
+.news-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.news-content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   11. CONTACT & INTERACTIVE HUB
+   -------------------------------------------------------------------------- */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+}
+
+.contact-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.contact-info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-light-blue);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.contact-info-text h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.contact-info-text p, 
+.contact-info-text a {
+  font-size: 0.95rem;
+  color: #4E5E73;
+}
+
+.hotline-card {
+  padding: 1.75rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 87, 184, 0.2);
+}
+
+.hotline-number {
+  font-family: var(--font-headings);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 0.25rem;
+}
+
+.map-container {
+  width: 100%;
+  height: 280px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   12. SUBPAGE HERO BANNER (Shared across subpages)
+   -------------------------------------------------------------------------- */
+.subpage-hero {
+  position: relative;
+  padding: 10rem 0 5rem 0;
+  background-color: var(--color-secondary);
+  color: var(--color-bg);
+  overflow: hidden;
+}
+
+.subpage-hero .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(11, 60, 140, 0.95) 0%, rgba(0, 87, 184, 0.85) 100%);
+  z-index: 1;
+}
+
+.subpage-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.subpage-hero h1 {
+  color: var(--color-bg);
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subpage-hero p {
+  color: #CBD6E2;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-bottom: 0;
+}
+
