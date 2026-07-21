@@ -190,6 +190,165 @@
         font-size: 0.9rem !important;
       }
     }
+
+    /* ==========================================================================
+       Network Company Section Styles
+       ========================================================================== */
+    .network-section {
+      background: linear-gradient(135deg, #0b2240 0%, #061224 100%) !important;
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .network-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .network-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .network-stat-card {
+      text-align: center;
+    }
+
+    .network-stat-card .stat-title {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .network-stat-card .stat-num {
+      font-size: 3.25rem;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .network-stat-card .stat-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-top: 0.25rem;
+    }
+
+    .network-stat-card .stat-desc {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 0.2rem;
+      line-height: 1.3;
+    }
+
+    .network-addresses-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 3.5rem;
+    }
+
+    .network-col {
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      padding-right: 1rem;
+    }
+
+    .network-col:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .network-col h3 {
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .network-item {
+      margin-bottom: 2rem;
+    }
+
+    .network-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .network-item h4 {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.2rem;
+      line-height: 1.3;
+    }
+
+    .network-item .sub-label {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .network-item p {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.6;
+    }
+
+    /* Responsiveness for Network */
+    @media (max-width: 1024px) {
+      .network-grid {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+      }
+      .network-addresses-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 2rem !important;
+      }
+      .network-col:nth-child(3) {
+        border-right: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .network-stats-row {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+      .network-addresses-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+      .network-col {
+        border-right: none !important;
+        padding-right: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        padding-bottom: 2rem !important;
+      }
+      .network-col:last-child {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -355,61 +514,208 @@
     </div>
   </section>
 
-  <!-- Section: Journey Timeline (Milestones) -->
-  <section class="section-padding">
+  <!-- Section: Network Company -->
+  <section class="section-padding network-section" id="network">
     <div class="container">
-      <div style="text-align: center; max-width: 700px; margin: 0 auto;" class="reveal">
-        <span class="badge" style="margin-bottom: 1rem;">Perjalanan Kami</span>
-        <h2 class="with-underline-center">Milestones Perusahaan</h2>
-        <p>Langkah demi langkah pertumbuhan BUMIGAS dalam menerangi sektor industri nasional dengan energi bersih.</p>
-      </div>
       
-      <div class="timeline reveal">
-        <!-- 2016 -->
-        <div class="timeline-item timeline-left">
-          <div class="timeline-content">
-            <div class="timeline-year">2016</div>
-            <h3>Pendirian Perusahaan</h3>
-            <p>PT BUMIGAS MITRA SEJAHTERA resmi didirikan di Jakarta dengan fokus awal pada jasa konsultasi konversi energi dan perdagangan gas bumi berskala kecil.</p>
-          </div>
+      <!-- Top Title & Stats Row -->
+      <div class="network-grid">
+        <!-- Title and description -->
+        <div class="reveal">
+          <span class="badge badge-accent" style="margin-bottom: 1rem;">Jaringan & Infrastruktur</span>
+          <h2 style="color: #ffffff; font-size: 2.5rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.02em;">Network Company</h2>
+          <p style="color: rgba(255,255,255,0.75); line-height: 1.75; font-size: 0.95rem; max-width: 600px;">
+            Jaringan kemitraan, anak usaha, serta entitas operasional PT Bumigas Mitra Sejahtera yang saling terintegrasi dalam menyediakan ketahanan pasokan energi dan layanan logistik terpadu di Indonesia.
+          </p>
         </div>
-        
-        <!-- 2018 -->
-        <div class="timeline-item timeline-right">
-          <div class="timeline-content">
-            <div class="timeline-year">2018</div>
-            <h3>Mother Station Pertama</h3>
-            <p>Pembangunan dan peresmian Mother Station pertama di Jawa Barat, memperkuat kapasitas pasokan logistik CNG untuk wilayah Jabodetabek.</p>
+
+        <!-- Stats Grid (Right) -->
+        <div class="network-stats-row reveal">
+          <div class="network-stat-card">
+            <p class="stat-title">Total Kapasitas Harian</p>
+            <p class="stat-num">4,0</p>
+            <p class="stat-label">MMSCFD</p>
+            <p class="stat-desc">(Juta Kubik Kaki/Hari)</p>
           </div>
-        </div>
-        
-        <!-- 2021 -->
-        <div class="timeline-item timeline-left">
-          <div class="timeline-content">
-            <div class="timeline-year">2021</div>
-            <h3>Ekspansi Jawa Timur</h3>
-            <p>Membuka cabang operasional dan armada distribusi baru di Surabaya untuk memenuhi lonjakan permintaan CNG dari industri F&B dan manufaktur Jawa Timur.</p>
+          <div class="network-stat-card">
+            <p class="stat-title">Area Operasional</p>
+            <p class="stat-num">4+</p>
+            <p class="stat-label">Jaringan Wilayah</p>
+            <p class="stat-desc">Jawa Tengah & Jawa Timur</p>
           </div>
-        </div>
-        
-        <!-- 2024 -->
-        <div class="timeline-item timeline-right">
-          <div class="timeline-content">
-            <div class="timeline-year">2024</div>
-            <h3>Sistem Monitoring IoT</h3>
-            <p>Meluncurkan sistem monitoring level gas terintegrasi berbasis Internet of Things (IoT) pada seluruh fasilitas PRS pelanggan untuk pembacaan volume gas presisi real-time.</p>
-          </div>
-        </div>
-        
-        <!-- 2026 -->
-        <div class="timeline-item timeline-left">
-          <div class="timeline-content">
-            <div class="timeline-year">2026</div>
-            <h3>Dekarbonisasi ESG</h3>
-            <p>Melayani lebih dari 50 klien industri terkemuka di Indonesia dan memperluas portofolio proyek konversi dekarbonisasi untuk memenuhi target audit ESG korporat.</p>
+          <div class="network-stat-card">
+            <p class="stat-title">Mother Station CNG</p>
+            <p class="stat-num">2</p>
+            <p class="stat-label">Stasiun Utama</p>
+            <p class="stat-desc">Ngoro, Mojokerto & Porong, Sidoarjo</p>
           </div>
         </div>
       </div>
+
+      <!-- Map Display (Center Java Map SVG) -->
+      <div style="text-align: center; margin-bottom: 4.5rem; background: rgba(0,0,0,0.15); padding: 2.5rem 1.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.04);" class="reveal">
+        <svg viewBox="0 0 800 240" class="java-map-svg" style="width:100%; max-width:740px; height:auto; display: inline-block;">
+          <!-- Java Island Main Silhouette -->
+          <path d="M 50,130 
+                   C 80,120 110,120 140,115 
+                   C 170,110 190,125 220,125 
+                   C 250,125 270,115 290,115 
+                   C 310,115 320,125 340,125 
+                   C 360,125 370,105 385,100 
+                   C 400,95 410,115 430,115 
+                   C 455,115 470,125 490,125 
+                   C 510,125 530,115 560,115 
+                   C 590,115 615,130 635,130 
+                   C 655,130 670,120 685,120 
+                   C 700,120 720,135 735,135 
+                   C 745,135 750,145 760,145
+                   L 765,155 
+                   C 755,160 740,160 730,165 
+                   C 720,170 705,178 690,178 
+                   C 675,178 665,170 650,168 
+                   C 635,166 620,172 605,172 
+                   C 590,172 575,160 560,158 
+                   C 545,156 530,162 515,162 
+                   C 500,162 485,152 470,150 
+                   C 455,148 440,155 425,155 
+                   C 410,155 395,148 380,148 
+                   C 365,148 350,158 335,158 
+                   C 320,158 305,150 290,150 
+                   C 275,150 260,160 245,160 
+                   C 230,160 215,152 200,152 
+                   C 185,152 170,162 155,162 
+                   C 140,162 125,152 110,152 
+                   C 95,152 80,162 65,162
+                   Z" 
+                fill="rgba(255, 255, 255, 0.95)" />
+
+          <!-- Madura Island Silhouette -->
+          <path d="M 645,115 
+                   C 660,110 675,105 695,105 
+                   C 710,105 720,115 730,115 
+                   C 735,115 735,122 725,122 
+                   C 710,122 695,120 680,120 
+                   C 665,120 655,122 645,118 Z" 
+                fill="rgba(255, 255, 255, 0.95)" />
+
+          <!-- Connector Lines & Labels (A, B, C) -->
+          <!-- A: Semarang -->
+          <g class="map-pin" transform="translate(365, 120)">
+            <line x1="0" y1="0" x2="15" y2="-55" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" />
+            <circle cx="15" cy="-55" r="10" fill="#0d2347" stroke="#ffffff" stroke-width="1.5" />
+            <text x="15" y="-51" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle" font-family="'Outfit', sans-serif">A</text>
+            <!-- Pulsing pin base -->
+            <circle cx="0" cy="0" r="5" fill="var(--color-accent)" />
+            <circle cx="0" cy="0" r="10" fill="none" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.7">
+              <animate attributeName="r" values="4;12" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite" />
+            </circle>
+          </g>
+
+          <!-- B: Batang -->
+          <g class="map-pin" transform="translate(290, 122)">
+            <line x1="0" y1="0" x2="-20" y2="-45" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" />
+            <circle cx="-20" cy="-45" r="10" fill="#0d2347" stroke="#ffffff" stroke-width="1.5" />
+            <text x="-20" y="-41" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle" font-family="'Outfit', sans-serif">B</text>
+            <!-- Pulsing pin base -->
+            <circle cx="0" cy="0" r="5" fill="var(--color-accent)" />
+            <circle cx="0" cy="0" r="10" fill="none" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.7">
+              <animate attributeName="r" values="4;12" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.8;0" dur="2.1s" repeatCount="indefinite" />
+            </circle>
+          </g>
+
+          <!-- C: Sidoarjo & Mojokerto -->
+          <g class="map-pin" transform="translate(615, 135)">
+            <line x1="0" y1="0" x2="0" y2="-65" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" />
+            <circle cx="0" cy="-65" r="10" fill="#0d2347" stroke="#ffffff" stroke-width="1.5" />
+            <text x="0" y="-61" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle" font-family="'Outfit', sans-serif">C</text>
+            <!-- Pulsing pin base -->
+            <circle cx="0" cy="0" r="5" fill="var(--color-accent)" />
+            <circle cx="0" cy="0" r="10" fill="none" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.7">
+              <animate attributeName="r" values="4;12" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.8;0" dur="1.9s" repeatCount="indefinite" />
+            </circle>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Bottom Address & Info 5-Column Grid -->
+      <div class="network-addresses-grid reveal">
+        
+        <!-- Column 1: A. SEMARANG -->
+        <div class="network-col">
+          <h3>A. Semarang</h3>
+          <div class="network-item">
+            <h4>PT Sesanti Suara Sakti</h4>
+            <div class="sub-label">Radio SS FM (Media Radio)</div>
+            <p>Jl. Kawi Raya No. 29 Kel. Wonotingal Kec. Candisari Semarang 50252</p>
+          </div>
+          <div class="network-item">
+            <h4>PT Adversia Global Media</h4>
+            <div class="sub-label">Media Advertising</div>
+            <p>Jl. Sultan Agung Kav. 5 No. 63 Lt 2 Gajahmungkur Semarang 50232</p>
+          </div>
+        </div>
+
+        <!-- Column 2: LPG & KAWASAN INDUSTRI -->
+        <div class="network-col">
+          <h3>SPBE &amp; Kawasan</h3>
+          <div class="network-item">
+            <h4>SPBE PT Satya Mitra Gas</h4>
+            <div class="sub-label">LPG Pertamina</div>
+            <p>Desa Sumberrejo RT. 5 RW. 5 Kel. Meteseh Kec. Tembalang Semarang 50271</p>
+          </div>
+          <div class="network-item">
+            <h4>PT Merdeka Wirastama</h4>
+            <div class="sub-label">Pengelola Kawasan Industri KITS</div>
+            <p>Jl. Kaligawe Raya Km. 5-6 Blok L Kel. Trimulyo Semarang 50118</p>
+          </div>
+        </div>
+
+        <!-- Column 3: LPG & PROPERTI/LOGISTIK -->
+        <div class="network-col">
+          <h3>SPPBE &amp; Logistik</h3>
+          <div class="network-item">
+            <h4>SPPBE PT Puri Kencana Merdeka Utama</h4>
+            <div class="sub-label">LPG Pertamina</div>
+            <p>Kawasan Industri Candi Blok 11 Jl. Candi Raya Timur Kel. Bambankerep, Ngaliyan Semarang Barat 50182</p>
+          </div>
+          <div class="network-item">
+            <h4>PT Brader Nusa Indonesia</h4>
+            <div class="sub-label">Properti &amp; Logistik</div>
+            <p>Gedung Menara Suara Merdeka Lt. 9 Jl. Pandanaran No. 30 Semarang</p>
+          </div>
+        </div>
+
+        <!-- Column 4: ENERGI & B. BATANG -->
+        <div class="network-col">
+          <h3>Energi &amp; B. Batang</h3>
+          <div class="network-item">
+            <h4>PT Terboyo Mukti Energi</h4>
+            <div class="sub-label">Energi &amp; Konstruksi Pertambangan</div>
+            <p>Jl. Dr. Cipto No. 138, Semarang, 50125</p>
+          </div>
+          <div class="network-item">
+            <h4>PT Segara Artha Abadi</h4>
+            <div class="sub-label">SPBU Pertamina 44.512.03</div>
+            <p>Jl. Raya Desa Beji RW. 06 RW. 02, Tulis, Batang</p>
+          </div>
+        </div>
+
+        <!-- Column 5: C. SIDOARJO & MOJOKERTO -->
+        <div class="network-col">
+          <h3>C. Sidoarjo &amp; Mojokerto</h3>
+          <div class="network-item">
+            <h4>PT Bumigas Mitra Sejahtera</h4>
+            <div class="sub-label">Compressed Natural Gas (CNG)</div>
+            <p style="margin-bottom: 0.75rem;"><strong>Ngoro Branch:</strong><br>Buluresik, Manduro MG, Kec. Ngoro, Mojokerto, Jawa Timur 61385</p>
+            <p><strong>Sidoarjo Branch:</strong><br>Sawah, Wunut, Kec. Porong, Kabupaten Sidoarjo, Jawa Timur 61274</p>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
