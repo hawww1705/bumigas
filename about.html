@@ -31,25 +31,15 @@
       right: 0;
       top: 0;
       height: 100%;
-      width: 42%;
+      width: 45%;
       background-image: url('assets/images/suara-merdeka-tower.png');
       background-size: cover;
       background-position: center top;
       opacity: 0.35;
       z-index: 1;
       pointer-events: none;
-    }
-
-    .about-hero-banner::after {
-      content: '';
-      position: absolute;
-      right: 32%;
-      top: 0;
-      height: 100%;
-      width: 25%;
-      background: linear-gradient(to right, var(--color-secondary) 0%, transparent 100%);
-      z-index: 2;
-      pointer-events: none;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 35%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 35%);
     }
 
     .about-hero-grid {
