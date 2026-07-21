@@ -44,57 +44,60 @@
   </header>
 
   <!-- Subpage Hero Banner -->
-  <section class="subpage-hero" style="min-height: 560px; display:flex; align-items:stretch; overflow:hidden; padding:0;">
+  <section class="subpage-hero" style="min-height: 560px; display:flex; align-items:center;">
     <div class="hero-overlay"></div>
+    <div class="container" style="position:relative; z-index:2; width:100%;">
+      <div style="display:grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;">
 
-    <div style="position:relative; z-index:2; width:100%; display:grid; grid-template-columns: 1fr 220px 320px; align-items:stretch;">
-
-      <!-- Column 1: Text + Address -->
-      <div style="padding: 3.5rem 2rem 3rem 2rem; display:flex; flex-direction:column; justify-content:center; max-width:540px; margin: 0 auto 0 auto; padding-left: clamp(1rem, 5vw, 4rem);">
-        <span class="badge badge-accent" style="margin-bottom:0.75rem; align-self:flex-start;">Company Profile</span>
-        <h1 style="margin-bottom:1.25rem;">Tentang BUMIGAS</h1>
-        <p style="font-size:0.92rem; line-height:1.75; margin-bottom:0.85rem;">PT Bumigas Mitra Sejahtera adalah perusahaan yang bergerak di bidang Compressed Natural Gas (CNG) sejak tahun 2018, yang telah menyediakan solusi pasokan gas alam terkompresi serta layanan servis yang terintegrasi. Dengan dukungan tim profesional berpengalaman lebih dari 20 tahun di industri gas, kami memberikan layanan konsultasi energi, pengembangan infrastruktur, serta penyediaan peralatan penunjang untuk mendukung kebutuhan operasional secara optimal.</p>
-        <p style="font-size:0.92rem; line-height:1.75; margin-bottom:2rem;">Seluruh peralatan di dalam mother station telah mendapatkan sertifikasi dari PT. Sertifikasi Raharja Indonesia, Badan Meterologi, dan Disnaker. Mother station ini telah mendapatkan Persetujuan Layak Operasi (PLO) dari Dirjen Migas serta Izin Niaga dari Kementrian ESDM.</p>
-
-        <!-- Address -->
-        <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top:1.5rem;">
-          <p style="font-size:0.78rem; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem;">Kantor Pusat</p>
-          <p style="font-size:0.88rem; font-weight:600; color:#ffffff; margin-bottom:0.75rem;">PT Bumigas Mitra Sejahtera</p>
-          <p style="font-size:0.83rem; color:rgba(255,255,255,0.75); line-height:1.7;">
-            Gedung Menara Suara Merdeka Lt. 9<br>
-            Jalan Pandanaran No. 30<br>
-            Semarang – 50134
-          </p>
-        </div>
-      </div>
-
-      <!-- Column 2: MMSCFD Stats (no box, floating) -->
-      <div style="display:flex; flex-direction:column; justify-content:center; gap:2.5rem; padding: 3rem 1.5rem;">
-        <!-- Stat 1 -->
+        <!-- Left: Text + Address -->
         <div>
-          <p style="font-size:0.75rem; color:rgba(255,255,255,0.65); margin-bottom:0.1rem; letter-spacing:0.03em;">Ngoro-Mojokerto</p>
-          <p style="font-size:4.5rem; font-weight:900; color:#ffffff; line-height:1; font-family:'Outfit',sans-serif; letter-spacing:-2px;">1.5</p>
-          <p style="font-size:0.95rem; font-weight:700; color:#ffffff; letter-spacing:0.05em; margin-top:0.25rem;">MMSCFD</p>
-          <p style="font-size:0.7rem; color:rgba(255,255,255,0.5); margin-top:0.1rem;">(Juta Kubik Kaki/Hari)</p>
+          <span class="badge badge-accent" style="margin-bottom:0.75rem;">Company Profile</span>
+          <h1>Tentang BUMIGAS</h1>
+          <p style="font-size:0.93rem; line-height:1.75; margin-bottom:0.85rem;">PT Bumigas Mitra Sejahtera adalah perusahaan yang bergerak di bidang Compressed Natural Gas (CNG) sejak tahun 2018, yang telah menyediakan solusi pasokan gas alam terkompresi serta layanan servis yang terintegrasi. Dengan dukungan tim profesional berpengalaman lebih dari 20 tahun di industri gas, kami memberikan layanan konsultasi energi, pengembangan infrastruktur, serta penyediaan peralatan penunjang untuk mendukung kebutuhan operasional secara optimal.</p>
+          <p style="font-size:0.93rem; line-height:1.75; margin-bottom:2rem;">Seluruh peralatan di dalam mother station telah mendapatkan sertifikasi dari PT. Sertifikasi Raharja Indonesia, Badan Meterologi, dan Disnaker. Mother station ini telah mendapatkan Persetujuan Layak Operasi (PLO) dari Dirjen Migas serta Izin Niaga dari Kementrian ESDM.</p>
+
+          <!-- Address -->
+          <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top:1.5rem;">
+            <p style="font-size:0.72rem; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.4rem;">Kantor Pusat</p>
+            <p style="font-size:0.88rem; font-weight:600; color:#ffffff; margin-bottom:0.6rem;">PT Bumigas Mitra Sejahtera</p>
+            <p style="font-size:0.82rem; color:rgba(255,255,255,0.7); line-height:1.8;">
+              Gedung Menara Suara Merdeka Lt. 9<br>
+              Jalan Pandanaran No. 30<br>
+              Semarang – 50134
+            </p>
+          </div>
         </div>
-        <!-- Stat 2 -->
-        <div>
-          <p style="font-size:0.75rem; color:rgba(255,255,255,0.65); margin-bottom:0.1rem; letter-spacing:0.03em;">Porong-Sidoarjo</p>
-          <p style="font-size:4.5rem; font-weight:900; color:#ffffff; line-height:1; font-family:'Outfit',sans-serif; letter-spacing:-2px;">2.5</p>
-          <p style="font-size:0.95rem; font-weight:700; color:#ffffff; letter-spacing:0.05em; margin-top:0.25rem;">MMSCFD</p>
-          <p style="font-size:0.7rem; color:rgba(255,255,255,0.5); margin-top:0.1rem;">(Juta Kubik Kaki/Hari)</p>
+
+        <!-- Right: MMSCFD (floating) + Tower (faded box) -->
+        <div style="display:flex; gap:1.25rem; align-items:center; flex-shrink:0;">
+
+          <!-- MMSCFD Stats (no box, floating) -->
+          <div style="display:flex; flex-direction:column; gap:2.25rem;">
+            <div>
+              <p style="font-size:0.72rem; color:rgba(255,255,255,0.6); margin-bottom:0.05rem; letter-spacing:0.03em;">Ngoro-Mojokerto</p>
+              <p style="font-size:4rem; font-weight:900; color:#ffffff; line-height:1; font-family:'Outfit',sans-serif; letter-spacing:-2px;">1.5</p>
+              <p style="font-size:0.85rem; font-weight:700; color:#ffffff; letter-spacing:0.06em; margin-top:0.2rem;">MMSCFD</p>
+              <p style="font-size:0.67rem; color:rgba(255,255,255,0.45); margin-top:0.05rem;">(Juta Kubik Kaki/Hari)</p>
+            </div>
+            <div>
+              <p style="font-size:0.72rem; color:rgba(255,255,255,0.6); margin-bottom:0.05rem; letter-spacing:0.03em;">Porong-Sidoarjo</p>
+              <p style="font-size:4rem; font-weight:900; color:#ffffff; line-height:1; font-family:'Outfit',sans-serif; letter-spacing:-2px;">2.5</p>
+              <p style="font-size:0.85rem; font-weight:700; color:#ffffff; letter-spacing:0.06em; margin-top:0.2rem;">MMSCFD</p>
+              <p style="font-size:0.67rem; color:rgba(255,255,255,0.45); margin-top:0.05rem;">(Juta Kubik Kaki/Hari)</p>
+            </div>
+          </div>
+
+          <!-- Tower Image (in box, faded/samar) -->
+          <div style="border-radius:14px; overflow:hidden; width:180px; height:280px; flex-shrink:0;">
+            <img src="assets/images/suara-merdeka-tower.png"
+              alt="Gedung Menara Suara Merdeka"
+              style="width:100%; height:100%; object-fit:cover; object-position:center top; display:block; opacity:0.45; mix-blend-mode:luminosity;">
+          </div>
+
         </div>
       </div>
-
-      <!-- Column 3: Tower Image (full height, flush right) -->
-      <div style="overflow:hidden; align-self:stretch; position:relative;">
-        <img src="assets/images/suara-merdeka-tower.png" alt="Gedung Menara Suara Merdeka - Kantor Bumigas"
-          style="height:100%; width:100%; object-fit:cover; object-position:center top; display:block;">
-      </div>
-
     </div>
   </section>
-
 
 
   <!-- Section: Vision & Mission -->
