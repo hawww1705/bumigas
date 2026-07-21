@@ -11,6 +11,196 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages.css">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  
+  <!-- Page-Specific Hero Styles -->
+  <style>
+    .about-hero-banner {
+      position: relative;
+      min-height: 600px;
+      padding-top: 10rem !important; /* Prevents header overlap */
+      padding-bottom: 4rem !important;
+      display: flex !important;
+      align-items: center !important;
+      overflow: hidden !important;
+      background-color: var(--color-secondary) !important;
+      box-sizing: border-box;
+    }
+
+    .about-hero-tower-bg {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 42%;
+      background-image: url('assets/images/suara-merdeka-tower.png');
+      background-size: cover;
+      background-position: center top;
+      opacity: 0.35;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .about-hero-banner::after {
+      content: '';
+      position: absolute;
+      right: 32%;
+      top: 0;
+      height: 100%;
+      width: 25%;
+      background: linear-gradient(to right, var(--color-secondary) 0%, transparent 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .about-hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 3.5rem;
+      align-items: center;
+      position: relative;
+      z-index: 3;
+    }
+
+    .about-hero-left {
+      max-width: 600px;
+    }
+
+    .about-hero-desc {
+      font-size: 0.95rem !important;
+      line-height: 1.75 !important;
+      color: rgba(255, 255, 255, 0.85) !important;
+      margin-bottom: 1.25rem !important;
+    }
+
+    .about-hero-address {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .about-hero-address .address-label {
+      font-size: 0.75rem !important;
+      color: rgba(255, 255, 255, 0.5) !important;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.4rem !important;
+    }
+
+    .about-hero-address .address-company {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-hero-address .address-text {
+      font-size: 0.88rem !important;
+      color: rgba(255, 255, 255, 0.75) !important;
+      line-height: 1.7 !important;
+    }
+
+    .about-hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding-left: 2rem;
+    }
+
+    .about-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-stat-item .stat-location {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .about-stat-item .stat-value {
+      font-size: 4.75rem;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1;
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: -3px;
+    }
+
+    .about-stat-item .stat-unit {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      letter-spacing: 0.08em;
+      margin-top: 0.2rem;
+    }
+
+    .about-stat-item .stat-sub {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 0.1rem;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1024px) {
+      .about-hero-banner {
+        min-height: auto !important;
+        padding-top: 9rem !important;
+        padding-bottom: 4rem !important;
+      }
+      
+      .about-hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 3.5rem !important;
+      }
+      
+      .about-hero-tower-bg {
+        width: 100% !important;
+        opacity: 0.12 !important; /* Low opacity on tablet/mobile for readability */
+      }
+      
+      .about-hero-banner::after {
+        display: none !important;
+      }
+      
+      .about-hero-stats {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        gap: 5rem !important;
+        padding-left: 0 !important;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .about-hero-banner {
+        padding-top: 8rem !important;
+        padding-bottom: 3rem !important;
+      }
+
+      .about-hero-grid {
+        gap: 2.5rem !important;
+      }
+
+      .about-hero-left h1 {
+        font-size: 2.25rem !important;
+      }
+      
+      .about-hero-stats {
+        flex-direction: row !important;
+        gap: 2.5rem !important;
+      }
+
+      .about-stat-item .stat-value {
+        font-size: 3.75rem !important;
+      }
+      
+      .about-stat-item .stat-unit {
+        font-size: 0.9rem !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -44,31 +234,27 @@
   </header>
 
   <!-- Subpage Hero Banner -->
-  <section class="subpage-hero" style="min-height: 580px; display:flex; align-items:center; position:relative; overflow:hidden;">
+  <section class="subpage-hero about-hero-banner">
     <div class="hero-overlay"></div>
 
-    <!-- Tower image: absolutely positioned on the right, no box, blends into dark bg -->
-    <img src="assets/images/suara-merdeka-tower.png"
-      alt="Gedung Menara Suara Merdeka"
-      style="position:absolute; right:0; top:0; height:100%; width:38%; object-fit:cover; object-position:center top; opacity:0.55; z-index:1;">
-    <!-- Gradient fade: tower blends into left/center dark bg -->
-    <div style="position:absolute; right:0; top:0; height:100%; width:50%; background: linear-gradient(to right, var(--color-secondary) 0%, transparent 55%); z-index:2; pointer-events:none;"></div>
+    <!-- Tower background image -->
+    <div class="about-hero-tower-bg"></div>
 
-    <div class="container" style="position:relative; z-index:3; width:100%;">
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:2rem; align-items:center;">
+    <div class="container">
+      <div class="about-hero-grid">
 
         <!-- Left: Text + Address -->
-        <div>
+        <div class="about-hero-left">
           <span class="badge badge-accent" style="margin-bottom:0.75rem;">Company Profile</span>
           <h1>Tentang BUMIGAS</h1>
-          <p style="font-size:0.93rem; line-height:1.75; margin-bottom:0.85rem;">PT Bumigas Mitra Sejahtera adalah perusahaan yang bergerak di bidang Compressed Natural Gas (CNG) sejak tahun 2018, yang telah menyediakan solusi pasokan gas alam terkompresi serta layanan servis yang terintegrasi. Dengan dukungan tim profesional berpengalaman lebih dari 20 tahun di industri gas, kami memberikan layanan konsultasi energi, pengembangan infrastruktur, serta penyediaan peralatan penunjang untuk mendukung kebutuhan operasional secara optimal.</p>
-          <p style="font-size:0.93rem; line-height:1.75; margin-bottom:2rem;">Seluruh peralatan di dalam mother station telah mendapatkan sertifikasi dari PT. Sertifikasi Raharja Indonesia, Badan Meterologi, dan Disnaker. Mother station ini telah mendapatkan Persetujuan Layak Operasi (PLO) dari Dirjen Migas serta Izin Niaga dari Kementrian ESDM.</p>
+          <p class="about-hero-desc">PT Bumigas Mitra Sejahtera adalah perusahaan yang bergerak di bidang Compressed Natural Gas (CNG) sejak tahun 2018, yang telah menyediakan solusi pasokan gas alam terkompresi serta layanan servis yang terintegrasi. Dengan dukungan tim profesional berpengalaman lebih dari 20 tahun di industri gas, kami memberikan layanan konsultasi energi, pengembangan infrastruktur, serta penyediaan peralatan penunjang untuk mendukung kebutuhan operasional secara optimal.</p>
+          <p class="about-hero-desc">Seluruh peralatan di dalam mother station telah mendapatkan sertifikasi dari PT. Sertifikasi Raharja Indonesia, Badan Meterologi, dan Disnaker. Mother station ini telah mendapatkan Persetujuan Layak Operasi (PLO) dari Dirjen Migas serta Izin Niaga dari Kementrian ESDM.</p>
 
           <!-- Address -->
-          <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top:1.5rem;">
-            <p style="font-size:0.72rem; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.4rem;">Kantor Pusat</p>
-            <p style="font-size:0.88rem; font-weight:600; color:#ffffff; margin-bottom:0.6rem;">PT Bumigas Mitra Sejahtera</p>
-            <p style="font-size:0.82rem; color:rgba(255,255,255,0.7); line-height:1.8;">
+          <div class="about-hero-address">
+            <p class="address-label">Kantor Pusat</p>
+            <p class="address-company">PT Bumigas Mitra Sejahtera</p>
+            <p class="address-text">
               Gedung Menara Suara Merdeka Lt. 9<br>
               Jalan Pandanaran No. 30<br>
               Semarang – 50134
@@ -77,24 +263,25 @@
         </div>
 
         <!-- Center-Right: MMSCFD Stats floating -->
-        <div style="display:flex; flex-direction:column; gap:2.5rem; padding-left:2rem;">
-          <div>
-            <p style="font-size:0.72rem; color:rgba(255,255,255,0.6); margin-bottom:0.05rem; letter-spacing:0.05em; text-transform:uppercase;">Ngoro – Mojokerto</p>
-            <p style="font-size:4.5rem; font-weight:900; color:#ffffff; line-height:1; font-family:'Outfit',sans-serif; letter-spacing:-3px;">1.5</p>
-            <p style="font-size:1rem; font-weight:800; color:#ffffff; letter-spacing:0.08em; margin-top:0.2rem;">MMSCFD</p>
-            <p style="font-size:0.7rem; color:rgba(255,255,255,0.45); margin-top:0.1rem;">(Juta Kubik Kaki/Hari)</p>
+        <div class="about-hero-stats">
+          <div class="about-stat-item">
+            <span class="stat-location">Ngoro – Mojokerto</span>
+            <span class="stat-value">1.5</span>
+            <span class="stat-unit">MMSCFD</span>
+            <span class="stat-sub">(Juta Kubik Kaki/Hari)</span>
           </div>
-          <div>
-            <p style="font-size:0.72rem; color:rgba(255,255,255,0.6); margin-bottom:0.05rem; letter-spacing:0.05em; text-transform:uppercase;">Porong – Sidoarjo</p>
-            <p style="font-size:4.5rem; font-weight:900; color:#ffffff; line-height:1; font-family:'Outfit',sans-serif; letter-spacing:-3px;">2.5</p>
-            <p style="font-size:1rem; font-weight:800; color:#ffffff; letter-spacing:0.08em; margin-top:0.2rem;">MMSCFD</p>
-            <p style="font-size:0.7rem; color:rgba(255,255,255,0.45); margin-top:0.1rem;">(Juta Kubik Kaki/Hari)</p>
+          <div class="about-stat-item">
+            <span class="stat-location">Porong – Sidoarjo</span>
+            <span class="stat-value">2.5</span>
+            <span class="stat-unit">MMSCFD</span>
+            <span class="stat-sub">(Juta Kubik Kaki/Hari)</span>
           </div>
         </div>
 
       </div>
     </div>
   </section>
+
 
   <!-- Section: Vision & Mission -->
   <section class="section-padding">
