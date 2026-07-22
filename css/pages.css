@@ -203,7 +203,7 @@
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 4rem;
-  align-items: center;
+  align-items: stretch;
 }
 
 .about-image {
@@ -211,11 +211,13 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
+  display: flex;
+  height: 100%;
 }
 
 .about-image img {
   width: 100%;
-  height: 480px;
+  height: 100%;
   object-fit: cover;
 }
 
