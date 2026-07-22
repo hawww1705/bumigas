@@ -126,6 +126,11 @@ p {
   color: #4E5E73;
   margin-bottom: 1.25rem;
   font-size: 1rem;
+  text-align: justify;
+}
+
+p, .section-padding p, .about-hero-desc, .sustainability-content p, .glass-card-dark p, .feature-card p, .card p {
+  text-align: justify;
 }
 
 a {

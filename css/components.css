@@ -95,8 +95,9 @@
 }
 
 .badge-accent {
-  background-color: rgba(122, 193, 67, 0.15);
-  color: #559325;
+  background-color: rgba(122, 193, 67, 0.2);
+  color: var(--color-accent);
+  border: 1px solid rgba(122, 193, 67, 0.4);
 }
 
 /* Header & Navigation */
