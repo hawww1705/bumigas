@@ -290,5 +290,17 @@ ul {
   h1 { font-size: 2.25rem; }
   h2 { font-size: 1.75rem; }
   .section-padding { padding: 4rem 0; }
-  .container { padding: 0 1.5rem; }
+  .container { padding: 0 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+  .container {
+    padding: 0 1rem !important;
+  }
+  h1 { font-size: 1.85rem !important; }
+  h2 { font-size: 1.5rem !important; }
 }

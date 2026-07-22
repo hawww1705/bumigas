@@ -348,7 +348,7 @@
    -------------------------------------------------------------------------- */
 .solutions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2.5rem;
   margin-top: 3.5rem;
 }
@@ -360,6 +360,9 @@
   border: 1px solid var(--color-border);
   background-color: var(--color-bg);
   transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .solution-card:hover {
@@ -372,6 +375,7 @@
   position: relative;
   height: 200px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .solution-img-wrapper img {
@@ -387,22 +391,34 @@
 
 .solution-icon-overlay {
   position: absolute;
-  bottom: -20px;
-  left: 20px;
-  width: 50px;
-  height: 50px;
+  bottom: 14px;
+  left: 16px;
+  width: 48px;
+  height: 48px;
   background-color: var(--color-accent);
   color: var(--color-secondary);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
-  box-shadow: var(--shadow-md);
+  font-size: 1.35rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  z-index: 2;
+  transition: var(--transition-normal);
+}
+
+.solution-card:hover .solution-icon-overlay {
+  transform: scale(1.1);
+  background-color: #ffffff;
+  color: var(--color-primary);
 }
 
 .solution-info {
   padding: 2.25rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .solution-info h3 {
@@ -412,7 +428,7 @@
 .solution-info p {
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
-  min-height: 72px;
+  flex-grow: 1;
 }
 
 /* --------------------------------------------------------------------------
@@ -520,9 +536,92 @@
    -------------------------------------------------------------------------- */
 .industries-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
   margin-top: 3.5rem;
+}
+
+@media (max-width: 1100px) {
+  .industries-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+/* ==========================================================================
+   INFINITE CLIENT LOGO MARQUEE TICKER
+   ========================================================================== */
+.client-logo-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 1.25rem 0;
+  margin-bottom: 3.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.client-logo-marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: scrollMarquee 35s linear infinite;
+}
+
+.client-logo-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.client-logo-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 0.65rem 1.6rem;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-lg);
+  color: var(--color-secondary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-normal);
+  cursor: pointer;
+  height: 64px;
+}
+
+.client-logo-badge:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 168, 204, 0.35);
+  border-color: var(--color-accent);
+}
+
+.client-logo-badge img {
+  height: 38px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+}
+
+.client-logo-badge.logo-iseki {
+  padding: 0.65rem 2.2rem;
+  border: 1.5px solid rgba(0, 87, 184, 0.4);
+  box-shadow: 0 6px 22px rgba(0, 87, 184, 0.2);
+}
+
+.client-logo-badge img[src*="logo-iseki"],
+.client-logo-badge.logo-iseki img {
+  height: 50px !important;
+  max-width: 190px !important;
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .industry-card {
@@ -1009,5 +1108,45 @@
   font-size: 1.1rem;
   max-width: 700px;
   margin-bottom: 0;
+}
+
+/* ==========================================================================
+   UNIVERSAL MOBILE RESPONSIVE GRID FIX (All Mobile Viewports)
+   ========================================================================== */
+@media (max-width: 650px) {
+  .solutions-grid,
+  .why-grid,
+  .projects-grid,
+  .news-grid,
+  .industries-grid,
+  .sustainability-progress,
+  .sustainability-grid,
+  .about-grid,
+  .hero-grid,
+  .contact-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .solution-info p {
+    min-height: auto !important;
+  }
+
+  .glass-card,
+  .why-card,
+  .solution-card,
+  .project-card,
+  .news-card,
+  .form-card {
+    padding: 1.5rem !important;
+  }
+
+  .subpage-hero h1 {
+    font-size: 2rem !important;
+  }
+
+  .cng-steps {
+    grid-template-columns: 1fr !important;
+  }
 }
 

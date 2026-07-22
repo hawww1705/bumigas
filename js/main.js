@@ -242,7 +242,7 @@ function initBackToTop() {
   });
 }
 
-/* 8. FORMS VALIDATION & SIMULATION */
+/* 8. FORMS VALIDATION & WHATSAPP DIRECT SUBMISSION */
 function initForms() {
   const forms = document.querySelectorAll('.interactive-form');
   
@@ -268,33 +268,48 @@ function initForms() {
       });
       
       if (!isValid) return;
+
+      // Extract form field values
+      const nameInput = form.querySelector('#name, #c_name');
+      const companyInput = form.querySelector('#company, #c_company');
+      const emailInput = form.querySelector('#email, #c_email');
+      const messageInput = form.querySelector('#message, #c_message');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const company = companyInput ? companyInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const message = messageInput ? messageInput.value.trim() : '';
       
       // Change submit button to loading state
       const submitBtn = form.querySelector('[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="loading-spinner"></span> Memproses...';
+      submitBtn.innerHTML = 'Mengarahkan ke WhatsApp...';
       
-      // Simulate API submit delay
+      // Build WhatsApp message text
+      const waText = `Halo Bumigas,%0A%0ASaya ingin mengajukan konsultasi / penawaran gas CNG:%0A%0A👤 *Nama:* ${encodeURIComponent(name)}%0A🏢 *Perusahaan/Pabrik:* ${encodeURIComponent(company)}%0A📧 *Email:* ${encodeURIComponent(email)}%0A💬 *Detail Kebutuhan:*%0A${encodeURIComponent(message)}`;
+      const waUrl = `https://wa.me/628563571913?text=${waText}`;
+
       setTimeout(() => {
-        // Show success layout
+        // Direct to WhatsApp
+        window.open(waUrl, '_blank');
+
+        // Show success layout on screen
         const successDiv = document.createElement('div');
         successDiv.className = 'glass-card reveal reveal-scale active';
         successDiv.style.padding = '2rem';
         successDiv.style.textAlign = 'center';
-        successDiv.style.marginTop = '2rem';
+        successDiv.style.marginTop = '1rem';
         successDiv.style.borderColor = 'var(--color-success)';
         
         successDiv.innerHTML = `
           <div style="font-size: 3rem; color: var(--color-success); margin-bottom: 1rem;">✓</div>
-          <h3 style="color: var(--color-secondary); margin-bottom: 0.5rem;">Terima Kasih!</h3>
-          <p style="margin-bottom: 0;">Pesan Anda telah berhasil dikirim. Tim kami akan segera menghubungi Anda kembali.</p>
+          <h3 style="color: var(--color-secondary); margin-bottom: 0.5rem;">Formulir Siap Terkirim!</h3>
+          <p style="margin-bottom: 0;">Data Anda telah terformat dan diarahkan langsung ke WhatsApp konsultan energi Bumigas (<strong>+62 856 3571913</strong>).</p>
         `;
         
-        // Hide form fields and submit button with fade
         form.innerHTML = '';
         form.appendChild(successDiv);
-      }, 1500);
+      }, 800);
     });
   });
 }
