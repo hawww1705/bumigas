@@ -554,23 +554,39 @@
    INFINITE CLIENT LOGO MARQUEE TICKER
    ========================================================================== */
 .client-logo-marquee-wrapper {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   position: relative;
   width: 100%;
-  padding: 1.25rem 0;
+  padding: 1.25rem 1rem;
   margin-bottom: 3.5rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-xl);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  scroll-behavior: smooth;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+}
+
+.client-logo-marquee-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.client-logo-marquee-wrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.client-logo-marquee-wrapper::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 10px;
 }
 
 .client-logo-marquee-track {
   display: flex;
   gap: 1.5rem;
   width: max-content;
-  animation: scrollMarquee 35s linear infinite;
+  animation: none !important;
 }
 
 .client-logo-marquee-track:hover {
