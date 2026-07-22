@@ -523,24 +523,26 @@
 .social-links {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .social-icon {
-  width: 40px;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-md);
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-bg);
+  color: #ffffff;
   transition: var(--transition-fast);
 }
 
 .social-icon:hover {
   background-color: var(--color-accent);
   color: var(--color-secondary);
+  border-color: var(--color-accent);
   transform: translateY(-3px);
 }
 
