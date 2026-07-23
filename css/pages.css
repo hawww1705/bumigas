@@ -391,6 +391,10 @@
   transform: scale(1.08);
 }
 
+#team .solution-card:hover .solution-img-wrapper img {
+  transform: none !important;
+}
+
 .solution-icon-overlay {
   position: absolute;
   bottom: 14px;
