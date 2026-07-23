@@ -1006,8 +1006,9 @@
    -------------------------------------------------------------------------- */
 .contact-layout {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 4rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
 }
 
 .contact-info-panel {
