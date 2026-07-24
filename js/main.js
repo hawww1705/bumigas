@@ -269,16 +269,20 @@ function initForms() {
       
       if (!isValid) return;
 
-      // Extract form field values
-      const nameInput = form.querySelector('#name, #c_name');
-      const companyInput = form.querySelector('#company, #c_company');
-      const emailInput = form.querySelector('#email, #c_email');
-      const messageInput = form.querySelector('#message, #c_message');
+      // Extract form field values dynamically
+      const nameInput = form.querySelector('#name, #c_name, #ct_name');
+      const companyInput = form.querySelector('#company, #c_company, #ct_company');
+      const emailInput = form.querySelector('#email, #c_email, #ct_email');
+      const phoneInput = form.querySelector('#phone, #c_phone, #ct_phone');
+      const subjectInput = form.querySelector('#subject, #c_subject, #ct_subject');
+      const messageInput = form.querySelector('#message, #c_message, #ct_message');
 
-      const name = nameInput ? nameInput.value.trim() : '';
-      const company = companyInput ? companyInput.value.trim() : '';
-      const email = emailInput ? emailInput.value.trim() : '';
-      const message = messageInput ? messageInput.value.trim() : '';
+      const name = nameInput ? nameInput.value.trim() : '-';
+      const company = companyInput ? companyInput.value.trim() : '-';
+      const email = emailInput ? emailInput.value.trim() : '-';
+      const phone = phoneInput ? phoneInput.value.trim() : '-';
+      const subject = subjectInput && subjectInput.options[subjectInput.selectedIndex] ? subjectInput.options[subjectInput.selectedIndex].text : '';
+      const message = messageInput ? messageInput.value.trim() : '-';
       
       // Change submit button to loading state
       const submitBtn = form.querySelector('[type="submit"]');
@@ -286,7 +290,10 @@ function initForms() {
       submitBtn.innerHTML = 'Mengarahkan ke WhatsApp...';
       
       // Build WhatsApp message text
-      const waText = `Halo Bumigas,%0A%0ASaya ingin mengajukan konsultasi / penawaran gas CNG:%0A%0A👤 *Nama:* ${encodeURIComponent(name)}%0A🏢 *Perusahaan/Pabrik:* ${encodeURIComponent(company)}%0A📧 *Email:* ${encodeURIComponent(email)}%0A💬 *Detail Kebutuhan:*%0A${encodeURIComponent(message)}`;
+      let waText = `Halo Bumigas,%0A%0ASaya ingin mengajukan konsultasi / penawaran gas CNG:%0A%0A👤 *Nama:* ${encodeURIComponent(name)}%0A🏢 *Perusahaan/Pabrik:* ${encodeURIComponent(company)}%0A📧 *Email:* ${encodeURIComponent(email)}`;
+      if (phone && phone !== '-') waText += `%0A📱 *No. HP/WA:* ${encodeURIComponent(phone)}`;
+      if (subject) waText += `%0A📌 *Topik:* ${encodeURIComponent(subject)}`;
+      waText += `%0A💬 *Detail Kebutuhan:*%0A${encodeURIComponent(message)}`;
       const waUrl = `https://wa.me/628563571913?text=${waText}`;
 
       setTimeout(() => {
