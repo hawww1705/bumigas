@@ -266,14 +266,34 @@
 
       .network-directory {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 2.5rem !important;
+        gap: 2rem !important;
+      }
+
+      .directory-col-placeholder {
+        display: none !important;
       }
     }
 
     @media (max-width: 576px) {
       .network-directory {
         grid-template-columns: 1fr !important;
-        gap: 2rem !important;
+        gap: 0 !important;
+      }
+
+      .network-directory-col {
+        margin-bottom: 0 !important;
+      }
+
+      .network-directory-col h3:not(.directory-col-placeholder) {
+        margin-top: 1.75rem;
+      }
+
+      .network-directory-col:first-child h3 {
+        margin-top: 0;
+      }
+
+      .directory-item {
+        margin-bottom: 1.15rem !important;
       }
     }
   </style>
@@ -449,8 +469,8 @@
   <section class="section-padding" id="network-company">
     <div class="container">
 
-      <!-- Top Row: Title & Map -->
-      <div class="network-grid">
+      <!-- Top Row: Title & Map (Centered) -->
+      <div class="network-grid" style="text-align: center;">
         <div class="reveal">
           <div style="margin-bottom: 0.85rem;">
             <span class="badge badge-accent">Kemitraan Strategis</span>
@@ -459,8 +479,8 @@
             style="color: #ffffff; font-size: 2.75rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 2.5rem; border-bottom: 2px solid var(--color-accent); padding-bottom: 0.5rem; display: inline-block;">
             Network Company</h2>
 
-          <!-- Map Image Container (No Box) -->
-          <div style="max-width: 680px; margin-top: 1.5rem;">
+          <!-- Map Image Container (Centered) -->
+          <div style="max-width: 680px; margin: 1.5rem auto 0 auto;">
             <img src="assets/images/java-network-map.png" alt="Peta Operasional BUMIGAS"
               style="width: 100%; height: auto; display: block;">
           </div>
@@ -489,7 +509,7 @@
 
         <!-- Column 2: Semarang (A2) -->
         <div class="network-directory-col">
-          <h3
+          <h3 class="directory-col-placeholder"
             style="color: transparent; border-bottom: 1px solid rgba(255, 255, 255, 0.1); user-select: none; pointer-events: none;">
             A. Semarang</h3>
 
@@ -509,7 +529,7 @@
 
         <!-- Column 3: Semarang (A3) -->
         <div class="network-directory-col">
-          <h3
+          <h3 class="directory-col-placeholder"
             style="color: transparent; border-bottom: 1px solid rgba(255, 255, 255, 0.1); user-select: none; pointer-events: none;">
             A. Semarang</h3>
 
