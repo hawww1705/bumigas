@@ -206,20 +206,8 @@
     }
 
     .network-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 4rem;
-      align-items: center;
-      margin-bottom: 4rem;
-    }
-
-    .network-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-      justify-content: center;
-      padding-left: 2.5rem;
-      border-left: 1px solid rgba(255, 255, 255, 0.15);
+      display: block;
+      margin-bottom: 3.5rem;
     }
 
     .network-directory {
@@ -273,18 +261,7 @@
 
     @media (max-width: 1024px) {
       .network-grid {
-        grid-template-columns: 1fr !important;
-        gap: 3rem !important;
-      }
-
-      .network-stats {
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        gap: 3.5rem !important;
-        padding-left: 0 !important;
-        border-left: none !important;
-        border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
-        padding-top: 2.5rem !important;
+        margin-bottom: 3rem !important;
       }
 
       .network-directory {
@@ -294,11 +271,6 @@
     }
 
     @media (max-width: 576px) {
-      .network-stats {
-        flex-direction: column !important;
-        gap: 2rem !important;
-      }
-
       .network-directory {
         grid-template-columns: 1fr !important;
         gap: 2rem !important;
@@ -477,10 +449,8 @@
   <section class="section-padding" id="network-company">
     <div class="container">
 
-      <!-- Top Row: Title & Stats Map Grid -->
+      <!-- Top Row: Title & Map -->
       <div class="network-grid">
-
-        <!-- Left: Title + Map -->
         <div class="reveal">
           <span class="badge badge-accent" style="margin-bottom: 1.5rem; display: inline-block;">Kemitraan
             Strategis</span>
@@ -489,58 +459,11 @@
             Network Company</h2>
 
           <!-- Map Image Container (No Box) -->
-          <div style="max-width: 580px; margin-top: 1.5rem;">
+          <div style="max-width: 680px; margin-top: 1.5rem;">
             <img src="assets/images/java-network-map.png" alt="Peta Operasional BUMIGAS"
               style="width: 100%; height: auto; display: block;">
           </div>
         </div>
-
-        <!-- Right: Stats Panel -->
-        <div class="network-stats reveal">
-          <!-- Stat 1 -->
-          <div>
-            <p
-              style="font-size: 0.82rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 0.25rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">
-              Total Kapasitas Harian</p>
-            <p
-              style="font-size: 3.75rem; font-weight: 900; color: #ffffff; line-height: 1.1; font-family: 'Outfit', sans-serif; letter-spacing: -2px;">
-              4,0</p>
-            <p
-              style="font-size: 0.9rem; font-weight: 700; color: var(--color-accent); letter-spacing: 0.08em; margin-top: 0.1rem; text-transform: uppercase;">
-              MMSCFD</p>
-            <p style="font-size: 0.72rem; color: rgba(255, 255, 255, 0.5); margin-top: 0.05rem;">(Juta Kubik Kaki/Hari)
-            </p>
-          </div>
-          <!-- Stat 2 -->
-          <div>
-            <p
-              style="font-size: 0.82rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 0.25rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">
-              Area Operasional</p>
-            <p
-              style="font-size: 3.75rem; font-weight: 900; color: #ffffff; line-height: 1.1; font-family: 'Outfit', sans-serif; letter-spacing: -2px;">
-              4+</p>
-            <p
-              style="font-size: 0.9rem; font-weight: 700; color: var(--color-accent); letter-spacing: 0.08em; margin-top: 0.1rem; text-transform: uppercase;">
-              Jaringan Operasional</p>
-            <p style="font-size: 0.72rem; color: rgba(255, 255, 255, 0.5); margin-top: 0.05rem;">di Jawa Tengah & Jawa
-              Timur</p>
-          </div>
-          <!-- Stat 3 -->
-          <div>
-            <p
-              style="font-size: 0.82rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 0.25rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">
-              Mother Station CNG</p>
-            <p
-              style="font-size: 3.75rem; font-weight: 900; color: #ffffff; line-height: 1.1; font-family: 'Outfit', sans-serif; letter-spacing: -2px;">
-              2</p>
-            <p
-              style="font-size: 0.9rem; font-weight: 700; color: var(--color-accent); letter-spacing: 0.08em; margin-top: 0.1rem; text-transform: uppercase;">
-              Stasiun Kompresi</p>
-            <p style="font-size: 0.72rem; color: rgba(255, 255, 255, 0.5); margin-top: 0.05rem;">Ngoro, Mojokerto &
-              Porong, Sidoarjo</p>
-          </div>
-        </div>
-
       </div>
 
       <!-- Bottom Directory: 5 Column Directory -->
@@ -576,10 +499,10 @@
           </div>
 
           <div class="directory-item">
-            <p class="item-title">PT MERDEKA WIRASTAMA</p>
-            <p class="item-tag">Kawasan Industri</p>
-            <p class="item-address">Kawasan Industri Terboyo Semarang (KITS) Jl. Kaligawe Raya Km. 5-6 Blok L Kel.
-              Trimulyo Semarang 50118</p>
+            <p class="item-title">SPPBE PT PURI KENCANA MERDEKA UTAMA</p>
+            <p class="item-tag">LPG Pertamina</p>
+            <p class="item-address">Kawasan Industri Candi Blok 11 Jl. Candi Raya Timur Kel. Bambankerep, Ngaliyan
+              Semarang Barat 50182</p>
           </div>
         </div>
 
@@ -590,10 +513,10 @@
             A. Semarang</h3>
 
           <div class="directory-item">
-            <p class="item-title">SPPBE PT PURI KENCANA MERDEKA UTAMA</p>
-            <p class="item-tag">LPG Pertamina</p>
-            <p class="item-address">Kawasan Industri Candi Blok 11 Jl. Candi Raya Timur Kel. Bambankerep, Ngaliyan
-              Semarang Barat 50182</p>
+            <p class="item-title">PT MERDEKA WIRASTAMA</p>
+            <p class="item-tag">Kawasan Industri</p>
+            <p class="item-address">Kawasan Industri Terboyo Semarang (KITS) Jl. Kaligawe Raya Km. 5-6 Blok L Kel.
+              Trimulyo Semarang 50118</p>
           </div>
 
           <div class="directory-item">
@@ -626,7 +549,7 @@
 
           <div class="directory-item">
             <p class="item-title">PT BUMIGAS MITRA SEJAHTERA</p>
-            <p class="item-tag">CNG Operations</p>
+            <p class="item-tag">CNG Motherstation</p>
 
             <p class="item-address" style="margin-bottom: 0.75rem;">
               <strong>Ngoro – Mojokerto:</strong><br>

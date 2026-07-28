@@ -12,7 +12,66 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages.css">
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <!-- Page-Specific Hero Styles -->
+  <style>
+    .sustainability-hero-banner {
+      position: relative;
+      min-height: 520px;
+      padding-top: 10rem !important;
+      padding-bottom: 4rem !important;
+      display: flex !important;
+      align-items: center !important;
+      overflow: hidden !important;
+      background-color: var(--color-secondary) !important;
+      box-sizing: border-box;
+    }
+
+    .sustainability-hero-bg {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 52%;
+      background-image: url('assets/images/sustainability-hero.jpg');
+      background-size: cover;
+      background-position: center center;
+      opacity: 0.45;
+      z-index: 1;
+      pointer-events: none;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 30%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 30%);
+    }
+
+    .sustainability-hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 650px;
+    }
+
+    @media (max-width: 1024px) {
+      .sustainability-hero-banner {
+        min-height: auto !important;
+        padding-top: 9rem !important;
+        padding-bottom: 4rem !important;
+      }
+
+      .sustainability-hero-bg {
+        width: 100% !important;
+        opacity: 0.15 !important;
+      }
+
+      .sustainability-hero-content {
+        max-width: 100% !important;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .sustainability-hero-banner {
+        padding-top: 8rem !important;
+        padding-bottom: 3rem !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -44,13 +103,19 @@
   </header>
 
   <!-- Subpage Hero Banner -->
-  <section class="subpage-hero">
+  <section class="subpage-hero sustainability-hero-banner">
     <div class="hero-overlay"></div>
+
+    <!-- Right Background Image -->
+    <div class="sustainability-hero-bg"></div>
+
     <div class="container">
-      <span class="badge badge-accent" style="margin-bottom:0.75rem;">Dekarbonisasi & ESG</span>
-      <h1>Keberlanjutan Lingkungan</h1>
-      <p>Membantu pelaku industri di Indonesia menekan jejak karbon operasional secara cepat dan kredibel demi masa
-        depan energi bersih.</p>
+      <div class="sustainability-hero-content">
+        <span class="badge badge-accent" style="margin-bottom:0.75rem;">Dekarbonisasi & ESG</span>
+        <h1>Keberlanjutan Lingkungan</h1>
+        <p>Membantu pelaku industri di Indonesia menekan jejak karbon operasional secara cepat dan kredibel demi masa
+          depan energi bersih.</p>
+      </div>
     </div>
   </section>
 
